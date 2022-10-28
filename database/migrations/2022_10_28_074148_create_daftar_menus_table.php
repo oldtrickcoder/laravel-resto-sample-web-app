@@ -18,6 +18,7 @@ class CreateDaftarMenusTable extends Migration
             $table->string('Nama_Menu');
             $table->bigInteger('harga');
             $table->string('gambar');
+            $table->text('deskripsi');
             $table->string('status');
         });
     }
