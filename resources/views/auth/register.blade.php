@@ -36,6 +36,19 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label for="foto_profile" class="col-md-4 col-form-label text-md-end">{{ __('link Foto Profile') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="foto-profile" type="text" class="form-control"  name="foto_profile"  placeholder="masukan link foto profil disini ....." >
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">

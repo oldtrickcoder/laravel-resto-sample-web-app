@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Dashboard - {{ config('app.name', 'Laravel') }}-Resto </title>
-    <!-- CSS files -->
+   
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('dist/css/tabler-flags.min.cs') }}" rel="stylesheet"/>
     <link href="{{ asset('dist/css/tabler-payments.min.css') }}" rel="stylesheet"/>
@@ -59,8 +59,7 @@
               </div>
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                  <span class="avatar avatar-sm" style="background-image: url({{ Auth::user()->foto_profile }})"></span>
-                  
+                  <span class="avatar avatar-sm" style="background-image: url('{{ Auth::user()->foto_profile }} )"></span>
                   <div class="d-none d-xl-block ps-2">
                     <div>  {{ Auth::user()->name }}</div>
                     <div class="mt-1 small text-muted"></div>
@@ -79,8 +78,8 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-menu">
               <ul class="navbar-nav pt-lg-3">
-                <li class="nav-item active" active>
-                  <a class="nav-link active" href="/"  >
+                <li class="nav-item " >
+                  <a class="nav-link" href="/"  >
                     <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                       <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><polyline points="5 12 3 12 12 3 21 12 19 12" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
                     </span>
@@ -89,8 +88,8 @@
                     </span>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ url('catat-pesanan'); }}" >
+                <li class="nav-item active">
+                  <a class="nav-link active" href="{{ url('catat-pesanan'); }}" >
                     <span class="nav-link-icon d-md-none d-lg-inline-block">
 	<svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="5" y="3" width="14" height="18" rx="2" /><line x1="9" y1="7" x2="15" y2="7" /><line x1="9" y1="11" x2="15" y2="11" /><line x1="9" y1="15" x2="13" y2="15" /></svg>
                     </span>
@@ -162,7 +161,8 @@
               </div>
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                  <span class="avatar avatar-sm" style="background-image: url({{ Auth::user()->foto_profile }})"></span>
+                  <span class="avatar avatar-sm" style="background-image: url({{ Auth::user()->foto_profile }})">
+                                      </span>
                   <div class="d-none d-xl-block ps-2">
                     <div>   {{ Auth::user()->name }}</div>
                     <div class="mt-1 small text-muted">{{ Auth::user()->role }}</div>
@@ -225,9 +225,11 @@
 
 
 
-  <script src=" {{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-  <!-- Tabler Core -->
-  <script src="{{ asset('dist/js/tabler.min.js') }}"></script>
-  <script src=" {{ asset('dist/js/demo.min.js') }}"></script>
+     <!-- Libs JS -->
+     <script src=" {{ asset('dist/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+     <!-- Tabler Core -->
+     <script src="{{ asset('dist/js/tabler.min.js') }}"></script>
+     <script src=" {{ asset('dist/js/demo.min.js') }}"></script>
+    
 </body>
 </html>

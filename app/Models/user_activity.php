@@ -12,5 +12,5 @@ class user_activity extends Model
     protected $fillable=[
         'user_id',
         'aktifitas'
-    ]
+    ];
 }

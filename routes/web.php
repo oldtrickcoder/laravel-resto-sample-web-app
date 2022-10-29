@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\pencatatan_pesanan;
+use App\Http\Controllers\daftarpesanan_Controller;
+use App\Http\Controllers\catatPembayaran_Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/home', HomeController::class);
+Route::resource('/catat-pesanan',pencatatan_pesanan::class);
+Route::resource('/daftar-pesanan',daftarpesanan_Controller::class);
+Route::resource('/catat-pembayaran',catatPembayaran_Controller::class);

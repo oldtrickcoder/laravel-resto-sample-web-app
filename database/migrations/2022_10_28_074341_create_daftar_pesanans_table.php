@@ -16,7 +16,6 @@ class CreateDaftarPesanansTable extends Migration
         Schema::create('daftar_pesanans', function (Blueprint $table) {
             $table->id();
             $table->date('Tanggal');
-            $table->integer('menu_id')->nullable();
             $table->integer('qty');
             $table->string('nomormeja');
             $table->string('nomorpesanan');

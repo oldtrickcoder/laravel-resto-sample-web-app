@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(daftar_meja_seed ::class);
         $this->call(MenuSeeder::class);
+        $this->call(usersSeeder::class);
     }
 }

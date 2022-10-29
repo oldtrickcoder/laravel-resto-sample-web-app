@@ -1,23 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\daftar_pesanan;
-use App\Models\detail_pesanan;
-use App\Models\daftar_menu;
-use Illuminate\Support\Str;
+
 use Illuminate\Http\Request;
 
-class pencatatan_pesanan extends Controller
+class catatPembayaran_Controller extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -25,9 +13,7 @@ class pencatatan_pesanan extends Controller
      */
     public function index()
     {
-        
-        return view('catat-pesanan');
-        
+        return view('catatpembayaran');
     }
 
     /**
@@ -37,8 +23,7 @@ class pencatatan_pesanan extends Controller
      */
     public function create()
     {
-        $menus=daftar_menu::get();
-        return view('tambah-item',['datas'=>$menus]);
+        //
     }
 
     /**
@@ -48,12 +33,6 @@ class pencatatan_pesanan extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    
-    public function tambahItem(Request $request)
     {
         //
     }

@@ -18,30 +18,28 @@
           <!-- Page title actions -->
           <div class="col-auto ms-auto d-print-none">
             <div class="btn-list">
-              <span class="d-none d-sm-inline">
-                <a href="#" class="btn btn-white">
-                  New view
-                </a>
-              </span>
-              <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
-                <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-                Create new report
-              </a>
-              <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-                <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+             
+          
+          
       </div>
     </div>
     <div class="page-body">
       <div class="container-xl">
-        <h1>hello dashboard</h1>
-        <h2>{{ Auth::user()->name }}</h2>
-        <p>{{ Auth::user()->role }}</p>
+        <div class="row ">
+          <div class="card bg-secondary text-white col-3 px-2 py-2 mx-3 my-3">
+            <h1>{{$avlblmenu}}</h1>
+            <h3>Jumlah menu tersedia</h3>
+          </div>
+          <div class="card bg-danger col-3 px-2 py-2  mx-3 my-3">
+            <h1>{{$pesanan_blmdbyr}}</h1>
+            <h3>Pesanan Belum Dibayar</h3>
+          </div>
+          <div class="card bg-success col-3 px-2 py-2  mx-3 my-3">
+            <h1>{{$avlbltable}}</h1>
+            <h3>Jumlah Meja Kosong</h3>
+          </div>
+         
+       
       </div>
     </div>
 
