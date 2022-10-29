@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2022 at 06:52 AM
+-- Generation Time: Oct 29, 2022 at 12:03 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -20,6 +20,46 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel_resto`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_mejas`
+--
+
+CREATE TABLE `daftar_mejas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nomor_meja` int(11) NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `daftar_mejas`
+--
+
+INSERT INTO `daftar_mejas` (`id`, `nomor_meja`, `status`) VALUES
+(1, 1, 'kosong'),
+(2, 2, 'kosong'),
+(3, 3, 'kosong'),
+(4, 4, 'kosong'),
+(5, 5, 'kosong'),
+(6, 6, 'kosong'),
+(7, 7, 'kosong'),
+(8, 8, 'kosong'),
+(9, 9, 'kosong'),
+(10, 10, 'kosong'),
+(11, 11, 'kosong'),
+(12, 12, 'kosong'),
+(13, 13, 'kosong'),
+(14, 14, 'kosong'),
+(15, 15, 'kosong'),
+(16, 16, 'kosong'),
+(17, 17, 'kosong'),
+(18, 18, 'kosong'),
+(19, 19, 'kosong'),
+(20, 20, 'kosong'),
+(21, 21, 'kosong'),
+(22, 22, 'kosong');
 
 -- --------------------------------------------------------
 
@@ -41,23 +81,23 @@ CREATE TABLE `daftar_menus` (
 --
 
 INSERT INTO `daftar_menus` (`id`, `Nama_Menu`, `harga`, `gambar`, `deskripsi`, `status`) VALUES
-(1, 'ayam geprek oke', 32000, './static/products/geprek mantap.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(2, 'ayam geprek cihuy', 34999, './static/products/geprek_mantap2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(3, 'ayam geprek ambar', 35000, './static/products/geprek_mantap3.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(4, 'ayam geprek ibu onah', 36000, './static/products/geprek2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(5, 'ayam geprek pak mansur', 37000, './static/products/ayam_kres.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(6, 'ayam geprek ujang bihin', 21000, './static/products/geprek3.png', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(7, 'bebek betutu', 55000, './static/products/betutu1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(8, 'ayam kalasan', 35000, './static/products/kalasan1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(9, 'ayam kalasan keren', 45000, './static/products/kalasan2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(10, 'minuman segar', 15000, './static/products/minuman1.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(11, 'minuman oke', 17000, './static/products/minuman2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(12, 'minuman keren', 19000, './static/products/minuman3.jpeg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(13, 'minuman empat', 21000, './static/products/minuman4.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(14, 'lima drink', 23000, './static/products/minuman5.jpeg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(15, 'minuman six', 25000, './static/products/minuman6.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(16, 'nine cloud drink', 27000, './static/products/minuman9.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
-(17, 'tahu lada garam', 21000, './static/products/tahu1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready');
+(1, 'ayam geprek oke', 32000, '/static/products/geprek mantap.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(2, 'ayam geprek cihuy', 34999, '/static/products/geprek_mantap2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(3, 'ayam geprek ambar', 35000, '/static/products/geprek_mantap3.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(4, 'ayam geprek ibu onah', 36000, '/static/products/geprek2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(5, 'ayam geprek pak mansur', 37000, '/static/products/ayam_kres.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(6, 'ayam geprek ujang bihin', 21000, '/static/products/geprek3.png', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(7, 'bebek betutu', 55000, '/static/products/betutu1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(8, 'ayam kalasan', 35000, '/static/products/kalasan1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(9, 'ayam kalasan keren', 45000, '/static/products/kalasan2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(10, 'minuman segar', 15000, '/static/products/minuman1.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(11, 'minuman oke', 17000, '/static/products/minuman2.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(12, 'minuman keren', 19000, '/static/products/minuman3.jpeg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(13, 'minuman empat', 21000, '/static/products/minuman4.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(14, 'lima drink', 23000, '/static/products/minuman5.jpeg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(15, 'minuman six', 25000, '/static/products/minuman6.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(16, 'nine cloud drink', 27000, '/static/products/minuman9.webp', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready'),
+(17, 'tahu lada garam', 21000, '/static/products/tahu1.jpg', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!', 'ready');
 
 -- --------------------------------------------------------
 
@@ -125,14 +165,15 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(59, '2014_10_12_000000_create_users_table', 1),
-(60, '2014_10_12_100000_create_password_resets_table', 1),
-(61, '2019_08_19_000000_create_failed_jobs_table', 1),
-(62, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(63, '2022_10_28_074015_create_user_activities_table', 1),
-(64, '2022_10_28_074148_create_daftar_menus_table', 1),
-(65, '2022_10_28_074341_create_daftar_pesanans_table', 1),
-(66, '2022_10_28_074505_create_detail_pesanans_table', 1);
+(85, '2014_10_12_000000_create_users_table', 1),
+(86, '2014_10_12_100000_create_password_resets_table', 1),
+(87, '2019_08_19_000000_create_failed_jobs_table', 1),
+(88, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(89, '2022_10_28_074015_create_user_activities_table', 1),
+(90, '2022_10_28_074148_create_daftar_menus_table', 1),
+(91, '2022_10_28_074341_create_daftar_pesanans_table', 1),
+(92, '2022_10_28_074505_create_detail_pesanans_table', 1),
+(93, '2022_10_29_001042_create_daftar_mejas_table', 1);
 
 -- --------------------------------------------------------
 
@@ -188,14 +229,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `role`, `foto_profile`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'zahrah puspita', 'pelayan', './static/avatars/005f.jpg', 'zahrahp@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, '2022-10-28 09:24:00', '2022-10-28 09:24:00'),
-(2, 'boy will I am', 'pelayan', './static/avatars/004m.jpg', 'william@gmail.com', NULL, '$2y$10$kZKMyj8cw.IDpFLVZOr3FuPAzl/Oie/fyAsWDj9H/BqQrANgRloGi', NULL, '2022-10-28 09:38:24', '2022-10-28 09:38:24'),
-(3, 'Petty Dona', 'pelayan', './static/avatars/006f.jpg', 'dona@gmail.com', NULL, '$2y$10$sdZI4Wy8WjYnBgXV9OmGjOZB6PsHwz2M4X6m1SYraXg7rfLQDTmpS', NULL, '2022-10-28 09:39:20', '2022-10-28 09:39:20'),
-(4, 'Jhonny Dafoe', 'kasir', './static/avatars/008m.jpg', 'dafoe@gmail.com', NULL, '$2y$10$FzGdF0qSZcHEkupLDYc6HeFFEBs4xniSJ7YIL4Y18bGOnwt.tnmzW', NULL, '2022-10-28 09:40:09', '2022-10-28 09:40:09'),
-(5, 'Pevita sweet', 'kasir', './static/avatars/009f.jpg', 'sweetpevita@gmail.com', NULL, '$2y$10$SD3LtGEPm0O8H8Bt0QdFtOoY5ZLuaQyGJkEVuSSzLMcVdP33Foz1G', NULL, '2022-10-28 09:41:36', '2022-10-28 09:41:36'),
-(6, 'Jane Darlin', 'pelayan', './static/avatars/020f.jpg', 'ohdarlin@gmail.com', NULL, '$2y$10$FeSDpZ5.S6nXeUbdinBWces88Oj2BM1s9cSyXxToZGv0zqO4SGPu6', NULL, '2022-10-28 09:42:45', '2022-10-28 09:42:45'),
-(7, 'jonathan smile', 'pelayan', './static/avatars/016m.jpg', 'iwantyoutosmile@gmail.com', NULL, '$2y$10$WVzhmWMMYxOzgLyFfqxTt.hj5akLWT.7KsCvrB6VgfrTrRxQ81ioW', NULL, '2022-10-28 09:43:37', '2022-10-28 09:43:37'),
-(8, 'mona sweet mom', 'pelayan', './static/avatars/019f.jpg', 'sweetmom@gmail.com', NULL, '$2y$10$E0yETufiwzjqyhQ2o3MLyud0my46ytjW43iSJdE5nX8iZ7DkjWJum', NULL, '2022-10-28 09:45:23', '2022-10-28 09:45:23');
+(1, 'zahrah puspita', 'pelayan', '/static/avatars/005f.jpg', 'zahrahp@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(2, 'boy will I am', 'pelayan', '/static/avatars/004m.jpg', 'william@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(3, 'Petty Dona', 'pelayan', '/static/avatars/006f.jpg', 'dona@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(4, 'Jhonny Dafoe', 'kasir', '/static/avatars/008m.jpg', 'dafoe@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(5, 'Pevita sweet', 'kasir', '/static/avatars/009f.jpg', 'sweetpevita@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(6, 'Jane Darlin', 'pelayan', '/static/avatars/020f.jpg', 'ohdarlin@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(7, 'jonathan smile', 'pelayan', '/static/avatars/016m.jpg', 'iwantyoutosmile@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL),
+(8, 'mona sweet mom', 'pelayan', '/static/avatars/019f.jpg', 'sweetmom@gmail.com', NULL, '$2y$10$oRRabton6eOK90tcfpIZmepr2R6A1s3p5KDSbi5lXbvyAK0MA0Hky', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -213,6 +254,12 @@ CREATE TABLE `user_activities` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `daftar_mejas`
+--
+ALTER TABLE `daftar_mejas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `daftar_menus`
@@ -280,6 +327,12 @@ ALTER TABLE `user_activities`
 --
 
 --
+-- AUTO_INCREMENT for table `daftar_mejas`
+--
+ALTER TABLE `daftar_mejas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `daftar_menus`
 --
 ALTER TABLE `daftar_menus`
@@ -307,7 +360,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
