@@ -132,7 +132,7 @@
             </div>
           </div>
         </aside>
-        <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
+        <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none sticky-top">
           <div class="container-xl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
               <span class="navbar-toggler-icon"></span>

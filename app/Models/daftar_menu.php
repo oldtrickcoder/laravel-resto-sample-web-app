@@ -9,6 +9,7 @@ class daftar_menu extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'id',
         'Nama_Menu',
         'harga',
         'gambar',

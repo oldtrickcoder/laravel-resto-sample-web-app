@@ -1,6 +1,7 @@
 @extends('layouts.catatpesanan-template')
 
 @section('content')
+
 <div class="page-wrapper">
   <div class="container-xl">
     <!-- Page title -->
@@ -16,21 +17,41 @@
           </h2>
         </div>
         <!-- Page title actions -->
+        @if(count($OrderTrans)<1)
         <div class="col-auto ms-auto d-print-none">
           <div class="btn-list">
-          
+          <a href="{{ url('/catat-pesanan/order') }}" class="btn btn-primary">(+) Catat Transaksi baru</a>
     </div>
+    @endif
   </div>
   <div class="page-body">
+  @if($pesan)
+  <div class="alert alert-primary" role="alert">
+    {{$pesan}}
+  </div>
+  @endif 
+  @if(session('hapuspesan'))
+  <div class="alert alert-danger" role="alert">
+    {{session('hapuspesan')}}
+  </div>
+  @endif
     <div class="container-xl">
       <div class="row ">
       <div class="card bg-light col px-2 py-2">
+        @if($OrderTrans)
         <div class="d-flex">
-          <h2>Nomor Pesanan :</h2><h2>  </h2>
+          @foreach($OrderTrans as $dataOrder)
+          <h2>Nomor Pesanan :</h2>
+          <h2>{{$dataOrder -> nomorpesanan}} </h2>
         </div>
+
         <div class="d-flex">
-          <h2>Nomor meja :</h2><h2>  </h2>
+          <h2>Nomor meja :</h2><h2>
+            {{$dataOrder -> nomor_meja}}   
+          </h2>
         </div>
+        @endforeach
+        @endif
         <table class="table">
           <thead>
             <tr>
@@ -38,54 +59,90 @@
               <th scope="col">Harga</th>
               <th scope="col">qty</th>
               <th scope="col">Total Nominal</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+         @if($DetailOrder)
+            @foreach($DetailOrder as $order)
+            {{-- {{$order}} --}}
+            <tr >
+              <th scope="row">{{$order -> nama_menu }} </th>
+              <td>{{$order -> harga }}</td>
+              <td> {{$order -> qty }}</td>
+              <td>{{$order -> qty * $order -> harga }} </td>
+              <td>
+                <div class="btn-list">
+             
+                 
+                  <a class="btn btn-success"
+                  href="{{ route('catat-pesanan.edit',$order->id) }}"
+                  >Edit</a>
+                  
+              
+                  <form 
+                  onsubmit="return confirm('Apakah Anda yakin menghapus ?');"
+                  action="{{ route('catat-pesanan.destroy', $order->id) }}"
+                  method="POST"
+                  id="hapusorder"
+                  >
+                  @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger" 
+                  type="submit"
+                   onclick="document.getElementById('hapusorder').click();"
+                   >Hapus</button>
+           
+                  </form>
+                </div>
+              </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            @endforeach
+         @endif
           </tbody>
         </table>
+        @if(count($OrderTrans)>0)
+        <div class="d-flex flex-column justify-content-end align-items-end">
+          <h1>Total Nominal Pembelanjaan </h1>
+        
+          <h2>
+            
+            {{$OrderTrans[0] -> TotalNominalPembelanjaan}}
+          
+          </h2>
+        </div> 
+        @endif
+   
         <div class="btn-list d-flex justify-content-end">
-          <a class="btn btn-primary" href="{{ route('catat-pesanan.create') }}">(+) Tambah Item</a>
-          <div class="btn btn-success">Submit Pesanan</div>
+   @if(count($OrderTrans)>0)
+          <form action="{{ url('/catat-pesanan/Create-item') }}" method="GET"  >
+            <input type="text" name="nomorpesanan" value="{{ $OrderTrans[0] -> nomorpesanan }}" class="d-none" >
+          <button type="submit"  class="btn btn-primary" >(+) Tambah Item</button>
+        </form>
+    
+ 
+ 
+         <form 
+         onsubmit="return confirm('Apakah Anda yakin mensubmit Order ini ?');"
+         action="{{ route('catat-pesanan.store')}}" method="POST" class="d-none">
+          @csrf
+        
+          <input type="text" name="id" id="" value="{{ $OrderTrans[0] -> id }}" class="d-none">
+          <input type="text" name="nomorpesanan" id="" value="{{ $OrderTrans[0] -> nomorpesanan }}" class="d-none">
+          <button id="submitpesanan" type="submit"> </button>
+         </form>
+          <div class="btn btn-success" 
+          onclick="document.getElementById('submitpesanan').click();"
+          >Submit Pesanan</div>
         </div>
-
       </div>
-       
+
+      @endif
      
     </div>
+
   </div>
-  <a href="#" class="btn" data-bs-toggle="modal" data-bs-target="#modal-small">
-    Small modal
-  </a>
-  <div class="modal modal-blur fade" id="modal-small" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="modal-title">Are you sure?</div>
-          <div>If you proceed, you will lose all your personal data.</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-link link-secondary me-auto" data-bs-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes, delete all my data</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
+ 
 @endsection
 

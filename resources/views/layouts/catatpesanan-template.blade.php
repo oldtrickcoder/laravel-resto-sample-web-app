@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Dashboard - {{ config('app.name', 'Laravel') }}-Resto </title>
-   
+    <link rel="shortcut icon" href="{{ asset('/static/avatars/000f.jpg') }}" type="image/x-icon">
     <link href="{{ asset('dist/css/tabler.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('dist/css/tabler-flags.min.cs') }}" rel="stylesheet"/>
     <link href="{{ asset('dist/css/tabler-payments.min.css') }}" rel="stylesheet"/>
@@ -14,7 +14,7 @@
   </head>
 <body>
     <div class="wrapper">
-        <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
+        <aside class="navbar navbar-vertical navbar-expand-lg navbar-dark sticky-top">
           <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
               <span class="navbar-toggler-icon"></span>
@@ -59,7 +59,7 @@
               </div>
               <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                  <span class="avatar avatar-sm" style="background-image: url('{{ Auth::user()->foto_profile }} )"></span>
+                  <span class="avatar avatar-sm" style="background-image: url({{ Auth::user()->foto_profile }} )"></span>
                   <div class="d-none d-xl-block ps-2">
                     <div>  {{ Auth::user()->name }}</div>
                     <div class="mt-1 small text-muted"></div>
@@ -131,7 +131,7 @@
             </div>
           </div>
         </aside>
-        <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
+        <header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none sticky-top">
           <div class="container-xl">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
               <span class="navbar-toggler-icon"></span>

@@ -20,7 +20,11 @@ use App\Http\Controllers\catatPembayaran_Controller;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/home', HomeController::class);
-Route::resource('/catat-pesanan',pencatatan_pesanan::class);
-Route::resource('/daftar-pesanan',daftarpesanan_Controller::class);
-Route::resource('/catat-pembayaran',catatPembayaran_Controller::class);
+Route::get('/catat-pesanan/order',[pencatatan_pesanan::class,'order'])->name('order');
+Route::get('/catat-pesanan/Create-item',[pencatatan_pesanan::class,'createItem'])->name('createitem');
+Route::post('/catat-pesanan/catatorderbaru',[pencatatan_pesanan::class,'InputNomerOrder'])->name('InputOrder');
+Route::get('/catat-pesanan/tambahitem',[pencatatan_pesanan::class,'tambahitem'])->name('tambah item activity');
+Route::resource('home', HomeController::class);
+Route::resource('catat-pesanan',pencatatan_pesanan::class);
+Route::resource('daftar-pesanan',daftarpesanan_Controller::class);
+Route::resource('catat-pembayaran',catatPembayaran_Controller::class);

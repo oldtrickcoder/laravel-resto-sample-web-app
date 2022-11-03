@@ -15,12 +15,13 @@ class CreateDaftarPesanansTable extends Migration
     {
         Schema::create('daftar_pesanans', function (Blueprint $table) {
             $table->id();
-            $table->date('Tanggal');
+            $table->date('Tanggal')->default(DB::raw('NOW()'));
             $table->integer('qty');
-            $table->string('nomormeja');
+            $table->integer('nomor_meja');
             $table->string('nomorpesanan');
             $table->integer('jumlahItemMenu');
             $table->integer('TotalNominalPembelanjaan');
+            $table->string('namapelayan');
             $table->string('status');
             $table->timestamps();
         });

@@ -9,6 +9,7 @@ class detail_pesanan extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'id',
         'id_pesanan',
         'menu_id',
         'qty',

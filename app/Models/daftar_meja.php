@@ -10,6 +10,7 @@ class daftar_meja extends Model
     use HasFactory;
 
     protected $fillable=[
+        'id',
         'nomor_meja',
         'status'
     ];

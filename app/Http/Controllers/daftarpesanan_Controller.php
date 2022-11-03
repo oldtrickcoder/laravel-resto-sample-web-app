@@ -1,9 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\daftar_pesanan;
+use App\Models\detail_pesanan;
+use App\Models\daftar_menu;
+use App\Models\daftar_meja;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Auth;
+use Jenssegers\Date\Date;
 class daftarpesanan_Controller extends Controller
 {
     /**
@@ -13,7 +19,13 @@ class daftarpesanan_Controller extends Controller
      */
     public function index()
     {
-        return view('daftar-pesanan');
+        $datapesanan=daftar_pesanan::orderBy('id','DESC')
+        ->get();
+
+        //return $datapesanan[0]->created_at;
+        return view('daftar-pesanan',[
+            'allpesanan'=>$datapesanan
+        ]);
     }
 
     /**
@@ -34,7 +46,8 @@ class daftarpesanan_Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+    
+        return $request;
     }
 
     /**

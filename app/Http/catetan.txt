@@ -1,0 +1,23 @@
+        $angkameja=intval($request->nomormeja);
+        $nomerpesanan=intval(daftar_pesanan::count())+1;
+        $nama=strval($request->namapelayan);
+        DB::table('daftar_mejas')
+        ->where('nomor_meja','=',$angkameja)
+        ->update(['status'=>'terisi']);
+  
+        daftar_pesanan::create([
+            'Tanggal'=>date('y-m-d'),
+            'qty'=>0,
+            'nomormeja'=>$angkameja,
+            'nomorpesanan'=>'custom_',
+            'jumlahItemMenu'=>0,
+            'TotalNominalPembelanjaan'=>0,
+            'namapelayan'=>$nama,
+            'status'=>'memilih makanan'
+        ]);
+        $pesanan=daftar_pesanan::where('status','=','memilih makanan')->get();
+        return view('/catat-pesanan',["OrderTrans"=>$pesanan,
+        "pesan"=>"data Order berhasil di input"
+        ]);
+
+        INSERT INTO DAFTAR_PESANANS('Tanggal','qty','nomor_meja','nomorpesanan','Jumlah)

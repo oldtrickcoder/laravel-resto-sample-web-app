@@ -26,7 +26,7 @@ class MenuSeeder extends Seeder
             'harga'=>'34999',
             'gambar'=>'/static/products/geprek_mantap2.jpg',
             'deskripsi'=>'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!',
-            'status'=>'ready'
+            'status'=>'unavailable'
         ]);
         DB::table('daftar_menus')->insert([
             'Nama_Menu'=>'ayam geprek ambar',
@@ -40,7 +40,7 @@ class MenuSeeder extends Seeder
             'harga'=>'36000',
             'gambar'=>'/static/products/geprek2.jpg',
             'deskripsi'=>'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim nesciunt sed iusto similique quasi iste aperiam repudiandae. Perferendis, consequuntur minima!',
-            'status'=>'ready'
+            'status'=>'unavailable'
         ]);
         DB::table('daftar_menus')->insert([
             'Nama_Menu'=>'ayam geprek pak mansur',

@@ -11,10 +11,11 @@ class daftar_pesanan extends Model
     protected $fillable=[
         'Tanggal',
         'qty',
-        'nomormeja',
+        'nomor_meja',
         'nomorpesanan',
         'jumlahItemMenu',
         'TotalNominalPembelanjaan',
+        'namapelayan',
         'status'
     ];
 }

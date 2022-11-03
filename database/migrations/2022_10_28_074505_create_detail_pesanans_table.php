@@ -15,12 +15,10 @@ class CreateDetailPesanansTable extends Migration
     {
         Schema::create('detail_pesanans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_pesanan')->nullable();
-            $table->unsignedBigInteger('menu_id')->nullable();
+            $table->Integer('id_pesanan')->nullable();
+            $table->Integer('menu_id')->nullable();
             $table->integer('qty');
-            $table->timestamp('waktu_transaksi')->useCurrent();
-            $table->foreign('id_pesanan')->references('id')->on('daftar_pesanans')->onDelete('cascade');
-            $table->foreign('menu_id')->references('id')->on('daftar_menus')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
